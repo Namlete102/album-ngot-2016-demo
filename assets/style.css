@@ -1,0 +1,222 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background-color: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+audio {
+  display: none;
+}
+
+.player-card {
+  display: flex;
+  background-color: #5d5537;
+  padding: 15px;
+  border-radius: 4px;
+  width: 720px;
+  height: 225px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.album-art {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  flex-shrink: 0;
+}
+
+.album-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.album-art p{
+  text-align: center;
+  color:#ffffff;
+  margin-bottom: 10px;
+}
+
+.main-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.main-play-btn:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.main-play-btn i {
+  color: #000;
+  font-size: 22px;
+  margin-left: 3px;
+}
+
+.playlist-container {
+  flex-grow: 1;
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- TÙY CHỈNH THANH KÉO TIẾN TRÌNH NHẠC --- */
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.progress-container input[type="range"] {
+  flex-grow: 1;
+  height: 4px;
+  accent-color: #ffffff; /* Màu nút tua nhạc */
+  cursor: pointer;
+}
+
+/* Khung chứa 2 nút Prev / Next */
+.progress-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Kiểu dáng nút bấm icon nhỏ gọn */
+.btn-step {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 3px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.btn-step:hover {
+  color: #f0f0f0;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* --- DANH SÁCH BÀI HÁT --- */
+.track-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  /* Cố định chiều cao tối đa (vừa vặn với ảnh bìa album) */
+  max-height: 145px; 
+  
+  /* Bật thanh cuộn dọc khi danh sách vượt quá chiều cao */
+  overflow-y: auto; 
+  
+  /* Khoảng đệm bên phải để nút bấm không dính sát thanh cuộn */
+  padding-right: 4px;
+}
+
+.track-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 12px;
+  height: 34px;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background 0.2s;
+  user-select: none;
+}
+
+/* 2. Tùy chỉnh giao diện thanh cuộn (Custom Scrollbar) cho đẹp mắt */
+/* Độ rộng của thanh cuộn */
+.track-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Rãnh chạy của thanh cuộn */
+.track-list::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+/* Nút con trượt của thanh cuộn */
+.track-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+/* Hiệu ứng khi rê chuột vào thanh cuộn */
+.track-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.track-item:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.track-title {
+  font-weight: 600;
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-stats {
+  font-size: 12px;
+  font-weight: 500;
+  color: #ffffff;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.track-item.active {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.track-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.btn-icon {
+  background-color: #ffffff;
+  border: none;
+  width: 30px;
+  height: 26px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  font-size: 11px;
+}
+

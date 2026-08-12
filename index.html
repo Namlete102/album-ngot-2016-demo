@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ban nhạc Ngọt</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./assets/style.css"> 
+  <link rel="shortcut icon" href="favicon.jpg" type="image/x-icon">
+</head>
+<body>
+
+  <!-- Thẻ audio ẩn dùng để phát nhạc -->
+  <audio id="audioPlayer"></audio>
+
+  <div class="player-card">
+    <!-- Album Cover & Main Play Button -->
+    <div class="album-art">
+      <img src="./album cover/Ngọt 2016.jpg" alt="Album Cover">
+      <button class="main-play-btn" id="mainPlayBtn" title="Play/Pause">
+        <i class="fa-solid fa-play"></i>
+      </button>
+      <p>Album Ngọt (2016)</p>
+    </div>
+
+    <!-- Playlist Content -->
+    <div class="playlist-container">
+      
+      <!-- THANH KÉO CHUYỂN NHẠC (PROGRESS BAR) -->
+      <div class="progress-container">
+        <span id="currentTime">00:00</span>
+        <!-- Thêm cụm nút điều khiển vào đây -->
+          <div class="progress-controls">
+            <button class="btn-step" id="prevBtn" title="Bài trước">
+              <i class="fa-solid fa-backward-step"></i>
+            </button>
+            
+            <button class="btn-step" id="nextBtn" title="Bài tiếp">
+              <i class="fa-solid fa-forward-step"></i>
+            </button>
+          </div>
+        <input type="range" id="progressBar" value="0" min="0" max="100" step="0.1">
+        <span id="duration">00:00</span>
+      </div>
+
+      <!-- Danh sách bài hát -->
+      <div class="track-list">
+        
+        <!-- track 1 -->
+        <div class="track-item active" data-src="https://short-lavender-scm219yi.edgeone.dev/">
+          <div class="track-title">Ngọt - Vì ai</div>
+        </div>
+
+        <!-- track 2 -->
+        <div class="track-item" data-src="https://continued-teal-cafaw54y.edgeone.dev/">
+          <div class="track-title">Ngọt - Cho tôi đi theo</div>
+        </div>
+
+        <!-- track 3 -->
+        <div class="track-item" data-src="https://binding-lavender-zdb9psvh.edgeone.dev/">
+          <div class="track-title">Ngọt - Cá hồi</div>
+        </div>
+
+        <!-- track 4 -->
+        <div class="track-item" data-src="https://vertical-pink-udr0mgql.edgeone.dev">
+          <div class="track-title">Ngọt - Be cool</div>
+        </div>
+
+        <!-- track 5 -->
+        <div class="track-item" data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3">
+          <div class="track-title">Ngọt - Xanh</div>
+        </div>
+
+        <!-- track 6 -->
+        <div class="track-item" data-src="https://regional-amethyst-mu8nbjqf.edgeone.dev/">
+          <div class="track-title">Ngọt - À ơi</div>
+        </div>
+
+        <!-- track 7 -->
+        <div class="track-item" data-src="https://exclusive-bronze-xfwu13dw.edgeone.dev">
+          <div class="track-title">Ngọt - Những chuyến phiêu lưu</div>
+        </div>
+
+        <!-- track 8 -->
+        <div class="track-item" data-src="https://friendly-silver-vkqj0grd.edgeone.dev">
+          <div class="track-title">Ngọt - Khắp xung quanh</div>
+        </div>
+
+        <!-- track 9 -->
+        <div class="track-item" data-src="https://vague-olive-ycdundrf.edgeone.dev">
+          <div class="track-title">Ngọt - Không làm gì</div>
+        </div>
+
+        <!-- track 10 -->
+        <div class="track-item" data-src="https://hidden-indigo-juii7x5t.edgeone.dev">
+          <div class="track-title">Ngọt - Drama Queen</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Js -->
+  <script src="./assets/script.js"></script>
+
+</body>
+</html>
